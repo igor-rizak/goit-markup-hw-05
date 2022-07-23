@@ -30,7 +30,9 @@
         <nav class="header-nav">
           <a href="/" class="logo logo-up">Web<span class="logo-header">Studio</span></a>
           <ul class="link list header-list">
-            <li><a href="index.html" class="link accent site">Студия</a></li>
+            <li class="underline">
+              <a href="index.html" class="link accent site studio-underline">Студия</a>
+            </li>
             <li><a href="portfolio.html" class="link site">Портфолио</a></li>
             <li><a href="" class="link site">Контакты</a></li>
           </ul>
@@ -63,7 +65,16 @@
       <section class="section-main">
         <div class="container">
           <h1 class="section-headline">Эффективные решения для вашего бизнеса</h1>
-          <button type="button" class="button button-by">Заказать услугу</button>
+          <button type="button" class="button button-by" data-open-modal>Заказать услугу</button>
+          <div class="backdrop is-hidden" data-backdrop>
+            <div class="modal">
+              <button type="button" data-close-modal>
+                <svg class="close-btn">
+                  <use href="./symbol-defs.svg#icon-close"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -128,12 +139,21 @@
           <ul class="list subject-list">
             <li class="subject-picture">
               <img src="./images/work/img_1.jpg" alt="Разработка структуры макета" width="370" />
+              <div class="subject-caption">
+                <h3>Десктопні додатки</h3>
+              </div>
             </li>
             <li class="subject-picture">
               <img src="./images/work/img_2.jpg" alt="Оптимизация под веб приложения" width="370" />
+              <div class="subject-caption">
+                <h3>Мобільні додатки</h3>
+              </div>
             </li>
-            <li>
-              <img src="./images/work/img_3.jpg" alt="Подбор цветовой гаммы" width="370" />
+            <li class="subject-picture">
+              <img src="./images/work/img_3.jpg " alt="Подбор цветовой гаммы" width="370" />
+              <div class="subject-caption">
+                <h3>Дизайнерські рішення</h3>
+              </div>
             </li>
           </ul>
         </div>
@@ -421,5 +441,25 @@
         </div>
       </div>
     </footer>
+    <script>
+      const refs = {
+        openModalBtn: document.querySelector('[data-open-modal]'),
+        closeModalBtn: document.querySelector('[data-close-modal]'),
+        backdrop: document.querySelector('[data-backdrop]'),
+      };
+
+      refs.openModalBtn.addEventListener('click', toggleModal);
+      refs.closeModalBtn.addEventListener('click', toggleModal);
+
+      refs.backdrop.addEventListener('click', logBackdropClick);
+
+      function toggleModal() {
+        refs.backdrop.classList.toggle('is-hidden');
+      }
+
+      function logBackdropClick() {
+        console.log('Ето клик в бекдроп');
+      }
+    </script>
   </body>
 </html>
