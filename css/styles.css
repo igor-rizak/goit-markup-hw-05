@@ -265,6 +265,7 @@ button:focus {
 /* Backdrop */
 
 .backdrop {
+  z-index: 2;
   position: fixed;
   top: 0;
   left: 0;
@@ -296,43 +297,27 @@ button:focus {
 
 .btn-modal {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  border: none;
-}
-
-.btn-modal:hover,
-.btn-modal:focus {
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.icon-ellipse {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 30px;
   height: 30px;
-  fill: rgba(255, 255, 255, 1);
+  top: 8px;
+  right: 8px;
+  background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 }
 
-.icon-ellipse:hover,
-.icon-ellipse:focus {
+.btn-modal:hover,
+.btn-modal:focus {
+  fill: var(--accent-color);
   border: var(--accent-color);
+  background-color: rgba(255, 255, 255, 1);
 }
+
 
 .close-btn {
   position: relative;
-  width: 11px;
-  height: 11px;
 }
 
-.close-btn:hover,
-.close-btn:focus {
-  fill: var(--accent-color);
-}
 
 /* Form-MODAL */
 
@@ -371,7 +356,7 @@ button:focus {
   
 .register-form-icon {
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
   left: 15px;
 }
   
